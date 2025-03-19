@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,25 +10,25 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="/" className="text-2xl font-bold tracking-tight">
+            <NavLink to="/" className="text-2xl font-bold tracking-tight">
               Logo
-            </a>
+            </NavLink>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex md:items-center md:space-x-8">
-            <a href="#" className="hover:text-gray-300 transition-colors">
+            <NavLink to="/" className="hover:text-gray-300 transition-colors">
               Home
-            </a>
-            <a href="#" className="hover:text-gray-300 transition-colors">
+            </NavLink>
+            <NavLink to="/about" className="hover:text-gray-300 transition-colors">
               About
-            </a>
-            <a href="#" className="hover:text-gray-300 transition-colors">
+            </NavLink>
+            <NavLink to="/services" className="hover:text-gray-300 transition-colors">
               Services
-            </a>
-            <a href="#" className="hover:text-gray-300 transition-colors">
+            </NavLink>
+            <NavLink to="/contact" className="hover:text-gray-300 transition-colors">
               Contact
-            </a>
+            </NavLink>
           </div>
 
           {/* Hamburger Button (Mobile) */}
@@ -73,18 +74,18 @@ const Navbar = () => {
         {/* Mobile Menu (Toggles on Hamburger Click) */}
         <div className={`${isOpen ? 'block' : 'hidden'} md:hidden`}>
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a
-              href="#"
+            <NavLink
+              to="/"
               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 hover:text-white transition-colors"
             >
               Home
-            </a>
-            <a
-              href="#"
+            </NavLink>
+            <NavLink
+              to="/about"
               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 hover:text-white transition-colors"
             >
               About
-            </a>
+            </NavLink>
             <a
               href="#"
               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 hover:text-white transition-colors"

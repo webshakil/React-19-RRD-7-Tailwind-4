@@ -21,8 +21,8 @@ const ColumnsLayout = () => {
             </div>
           ))}
         </div>
-          <p>This is column 2</p>
-        <div className="columns-2 gap-4">
+         
+        {/* <div className="columns-2 gap-4">
           {items.map((item) => (
             <div
               key={item.id}
@@ -31,9 +31,9 @@ const ColumnsLayout = () => {
               {item.text}
             </div>
           ))}
-        </div>
+        </div> */}
 
-        <div className="columns-6 gap-4">
+        {/* <div className="columns-6 gap-4">
           {items.map((item) => (
             <div
               key={item.id}
@@ -42,7 +42,7 @@ const ColumnsLayout = () => {
               {item.text}
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     );
   };
