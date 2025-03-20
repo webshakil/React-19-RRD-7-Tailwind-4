@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { FaHamburger } from 'react-icons/fa'; // Hamburger icon
+import { IoCloseCircleSharp } from 'react-icons/io5'; // Close icon
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
@@ -8,7 +10,7 @@ const Navbar = () => {
     <nav className="bg-gray-900 text-white shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
+          
           <div className="flex-shrink-0">
             <NavLink to="/" className="text-2xl font-bold tracking-tight">
               Logo
@@ -29,6 +31,9 @@ const Navbar = () => {
             <NavLink to="/contact" className="hover:text-gray-300 transition-colors">
               Contact
             </NavLink>
+            <NavLink to="/dashboard" className="hover:text-gray-300 transition-colors">
+              Dashboard
+            </NavLink>
           </div>
 
           {/* Hamburger Button (Mobile) */}
@@ -40,52 +45,32 @@ const Navbar = () => {
             >
               <span className="sr-only">Open main menu</span>
               {/* Hamburger Icon */}
-              <svg
+              <FaHamburger
                 className={`${isOpen ? 'hidden' : 'block'} h-6 w-6`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16m-7 6h7"
-                />
-              </svg>
+              />
               {/* Close Icon */}
-              <svg
+              <IoCloseCircleSharp
                 className={`${isOpen ? 'block' : 'hidden'} h-6 w-6`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
+              />
             </button>
           </div>
         </div>
 
-        {/* Mobile Menu (Toggles on Hamburger Click) */}
+        {/* Mobile Menu */}
         <div className={`${isOpen ? 'block' : 'hidden'} md:hidden`}>
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <NavLink
-              to="/"
+            <a
+              href="#"
               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 hover:text-white transition-colors"
             >
               Home
-            </NavLink>
-            <NavLink
-              to="/about"
+            </a>
+            <a
+              href="#"
               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 hover:text-white transition-colors"
             >
               About
-            </NavLink>
+            </a>
             <a
               href="#"
               className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 hover:text-white transition-colors"
